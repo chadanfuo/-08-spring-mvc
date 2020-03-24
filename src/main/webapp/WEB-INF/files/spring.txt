@@ -1,0 +1,26 @@
+create table member(
+  memNum int UNIQUE,
+  email varchar(60) primary key,	
+  name varchar(10) not null,	
+  passwd varchar(12) not null,
+  profile varchar(50),
+  selfIntroduction varchar(200)
+);
+
+create table following(
+  memberId varchar(50),
+  followId varchar(50)
+);
+
+drop table member;
+insert into member (memNum,email,name,passwd) values(1,'dong','µ¿',123);
+insert into member (memNum,email,name,passwd) values(2,'park','¹Ú',123);
+insert into member (memNum,email,name,passwd) values(3,'jin','Áø',123);
+
+update member set SELFINTRODUCTION='test' where memberId='dong';
+
+select * from hmember;
+select nvl(max(memNum),0) 
+from hmember;
+
+commit;
